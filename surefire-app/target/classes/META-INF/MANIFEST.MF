@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-Description: IPF is an eHealth Integration Framework
+Bundle-License: Apache License, Version 2.0;url=http://www.apache.org/
+ licenses/LICENSE-2.0;description=OpenSource license provided by the A
+ pache foundation
+Bundle-SymbolicName: com.avaintec.archive.surefire-plugin-problem-app
+Bundle-Category: healthcare
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1411056298777
+Bundle-DocURL: http://www.openehealth.org/
+Bundle-Vendor: Open eHealth Foundation
+Tool: Bnd-0.0.357
+Bundle-Version: 0.1.0.SNAPSHOT
+Bundle-Name: surefire-plugin-problem-app
+Build-Time: Thu Sep 18 20:04:58 MSK 2014
+Created-By: 1.8.0 (Oracle Corporation)
+

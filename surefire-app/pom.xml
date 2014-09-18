@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.avaintec.archive</groupId>
+    <artifactId>surefire-plugin-problem-app</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1-SNAPSHOT</version>
+
+
+    <parent>
+        <artifactId>surefire-plugin-problem</artifactId>
+        <groupId>com.yaroslavtir</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+
+        <spring.version>4.0.3.RELEASE</spring.version>
+        <camel.version>2.13.0</camel.version>
+        <spock-maven.version>0.7-groovy-2.0</spock-maven.version>
+        <camel-http4.version>2.13.1</camel-http4.version>
+        <cglib.version>3.1</cglib.version>
+        <mockito-all.version>1.8.4</mockito-all.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <!--
+                This scope is only needed to run load tests
+                (using JUnit test classes) as normal Java
+                programs. Otherwise set scope to 'test'.
+            -->
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junitperf</groupId>
+            <artifactId>junitperf</artifactId>
+            <!--
+                This scope is only needed to run load tests
+                (using JUnit test classes) as normal Java
+                programs. Otherwise set scope to 'test'.
+            -->
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-log4j12</artifactId>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--todo delete this dependency, and use groovy for this porpise -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>17.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.3.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-daemon</groupId>
+            <artifactId>commons-daemon</artifactId>
+            <version>1.0.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+
+        <!-- Dependencies for main -->
+        <dependency>
+            <groupId>org.openehealth.ipf.platform-camel</groupId>
+            <artifactId>ipf-platform-camel-ihe-xds</artifactId>
+            <version>${ipf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openehealth.ipf.platform-camel</groupId>
+            <artifactId>ipf-platform-camel-ihe-xds</artifactId>
+            <version>${ipf.version}</version>
+            <type>test-jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openehealth.ipf.commons</groupId>
+            <artifactId>ipf-commons-ihe-xds</artifactId>
+            <version>${ipf.version}</version>
+            <type>test-jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openehealth.ipf.commons</groupId>
+            <artifactId>ipf-commons-ihe-ws</artifactId>
+            <version>${ipf.version}</version>
+            <type>test-jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openehealth.ipf.platform-camel</groupId>
+            <artifactId>ipf-platform-camel-ihe-ws</artifactId>
+            <version>${ipf.version}</version>
+            <type>test-jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.tomcat</groupId>-->
+        <!--<artifactId>tomcat-catalina</artifactId>-->
+        <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.tomcat</groupId>-->
+        <!--<artifactId>tomcat-coyote</artifactId>-->
+        <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.tomcat</groupId>-->
+        <!--<artifactId>tomcat-jasper</artifactId>-->
+        <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+
+
+        <!--todo change version-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http4</artifactId>
+            <version>${camel-http4.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+
+        <!-- Dependencies for test -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-maven</artifactId>
+            <version>${spock-maven.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-spring</artifactId>
+            <version>${spock-maven.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.mockito</groupId>-->
+        <!--<artifactId>mockito-all</artifactId>-->
+        <!--<version>${mockito-all.version}</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+        <!--<groupId>org.openehealth.ipf.commons</groupId>-->
+        <!--<artifactId>ipf-commons-ihe-core</artifactId>-->
+        <!--<version>${ipf.version}</version>-->
+        <!--<type>test-jar</type>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
+    </dependencies>
+
+
+</project>
